@@ -10,7 +10,21 @@ import json
 def index(request):
     return JsonResponse({
         "message":"Welcome to Property Management",
-        "End points":"/create_new_property, /fetch_property_details, /update_property_details"
+        "End points":"/create_new_property " 
+                        "(Input: property name, address, city, and state."
+                        "Output: list of properties with all details)"
+                        ", /fetch_property_details" 
+                        "(Input: city name." 
+                        "Output: a list of all properties that belong to the city name passed in the input)"
+                        ", /update_property_details "
+                        "(Input: property_id, property name, address, city, state" 
+                        "Output: same as create_new_property API with updated information)"
+                        ", /find_cities_by_state "
+                        "(Input: state_id or state_name" 
+                        "Output: all city names that belong with the state)"
+                        ", /find_similar_properties "
+                        "(Input: property_id" 
+                        "Output: list of all properties that belong to the same city as that of given property_id)"
     })
     
 #create property endpoints 
